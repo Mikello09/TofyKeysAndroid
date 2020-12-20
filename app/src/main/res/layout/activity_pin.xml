@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".registro.PinActivity"
+        android:background="@drawable/gradiente">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:elevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.Toolbar>
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pin_info_card"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/blanco"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/tofy_keys_icon" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="Vas a generar un PIN de 4 dígitos. Este PIN servirá como seguridad para acceder a Tofy."
+                    android:textAlignment="viewStart"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pin_info_card">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/pin1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edittext_shadow"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="21dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/pin2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edittext_shadow"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="21dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/pin3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edittext_shadow"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="21dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/pin4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edittext_shadow"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="21dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pin_biometria_layout"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/blanco"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/boton_pin_siguiente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/tofy_keys_icon" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:text="Hemos detectado que tiene un método biométrico enrolado en su dispositivo. Actívalo para que la entrada a Tofy sea más rápida."
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/switch_seguridad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Activar biometría"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/boton_pin_siguiente"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/boton_principal"
+            android:text="Siguiente"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

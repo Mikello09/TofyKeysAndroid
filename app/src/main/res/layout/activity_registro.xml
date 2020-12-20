@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.codebounds.tofyapp.registro.RegistroViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".registro.RegistroActivity"
+        android:background="@drawable/gradiente">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:elevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.Toolbar>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_email_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="Email"
+            app:startIconDrawable="@drawable/ic_person_black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registro_info_card">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextEmailAddress4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_pass1_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            app:startIconDrawable="@drawable/ic_lock"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="@+id/registro_email_layout"
+            app:layout_constraintStart_toStartOf="@+id/registro_email_layout"
+            app:layout_constraintTop_toBottomOf="@+id/registro_email_layout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registro_pass2_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Repetir contraseña"
+            android:inputType="textPassword"
+            app:startIconDrawable="@drawable/ic_lock"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="@+id/registro_pass1_layout"
+            app:layout_constraintStart_toStartOf="@+id/registro_pass1_layout"
+            app:layout_constraintTop_toBottomOf="@+id/registro_pass1_layout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextPassword3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/registro_info_card"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blanco"
+            app:layout_constraintEnd_toEndOf="@+id/registro_pass2_layout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/registro_pass2_layout"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/tofy_keys_icon" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="Necesitamos crear una cuenta de usuario para que en caso de cambiar de dispositivo puedas llevarte a Tofy contigo."
+                    android:textAlignment="viewStart"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <Button
+            android:id="@+id/crearCuentaBoton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="Crear cuenta"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/boton_principal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/login_loader"
+            layout="@layout/loader_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="@{viewmodel.showLoader ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/registroErrorText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginTop="5dp"
+            android:text="@{viewmodel.mensajeError}"
+            android:textColor="@color/rojo"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:visibility="@{viewmodel.errorVisible ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="@+id/registro_pass2_layout"
+            app:layout_constraintStart_toStartOf="@+id/registro_pass2_layout"
+            app:layout_constraintTop_toBottomOf="@+id/registro_pass2_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
