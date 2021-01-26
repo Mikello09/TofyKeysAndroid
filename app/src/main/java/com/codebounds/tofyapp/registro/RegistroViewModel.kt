@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.codebounds.tofyapp.api.ServiceBuilder
 import com.codebounds.tofyapp.api.UsuarioEndPoints
 import com.codebounds.tofyapp.api.data.UsuarioModel
+import com.codebounds.tofyapp.helper.isValidEmail
 import kotlinx.coroutines.launch
 
 class RegistroViewModel(): ViewModel(){
@@ -27,6 +28,11 @@ class RegistroViewModel(): ViewModel(){
     fun onRegistrarClicked(email: String, pass1: String, pass2: String){
         if (email.isNullOrEmpty()){
             _mensajeError.value = "El email no puede estar vacío"
+            _errorVisible.value = true
+            return
+        }
+        if (!email.isValidEmail()){
+            _mensajeError.value = "El formato del email no es correcto"
             _errorVisible.value = true
             return
         }

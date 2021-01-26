@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titulo">32sp</dimen>
+    <dimen name="subtitulo">21sp</dimen>
+    <dimen name="error">14sp</dimen>
+    <dimen name="normal">17sp</dimen>
+    <dimen name="botonTexto">18sp</dimen>
+    <dimen name="aviso">14sp</dimen>
+    <dimen name="pinDigito">21sp</dimen>
+    <dimen name="opcionTitulo">12sp</dimen>
+</resources>

@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ClavesActivity : BaseActivity(), AddClavePopupInterface, ClaveDetallePopupInterface {
+class ClavesActivity : BaseActivity(), AddClavePopupInterface, ClaveDetallePopupInterface, EliminarClavePopupInterface {
 
     private lateinit var binding: ActivityClavesBinding
     private lateinit var viewmodel: ClavesViewModel
@@ -47,6 +47,9 @@ class ClavesActivity : BaseActivity(), AddClavePopupInterface, ClaveDetallePopup
 
         binding.clavesRecicler.layoutManager = GridLayoutManager(this, 1)
         binding.clavesRecicler.adapter = adapter
+
+        //Greeting label
+        binding.greetingLabel.text = "Hola " + Usuario.shared.email
 
 
         binding.configuracionBoton.setOnClickListener {
@@ -94,6 +97,10 @@ class ClavesActivity : BaseActivity(), AddClavePopupInterface, ClaveDetallePopup
     }
 
     override fun eliminarClave(clave: Clave) {
+        EliminarClavePopup.newInstance(this,clave).show(supportFragmentManager,"EliminarClaveVerificacion")
+    }
+
+    override fun si(clave: Clave) {
         viewmodel.eliminarClave(clave)
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF144A57</color>
+    <color name="colorPrincipal">#FF144A57</color>
     <color name="colorPrimaryDark">#FF144A57</color>
     <color name="colorAccent">#000000</color>
 
@@ -11,4 +11,9 @@
     <color name="rojo">#fa161e</color>
     <color name="separador">#f7f7f7</color>
     <color name="verde">#52af52</color>
+
+    <color name="roto">#ebf4ef</color>
+    <color name="blancoRoto">#7f7f7f</color>
+    <color name="verdeApagado">#209853</color>
+    <color name="rojoApagado">#b01d1d</color>
 </resources>

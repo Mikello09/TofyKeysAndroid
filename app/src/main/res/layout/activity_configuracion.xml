@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente"
+    android:background="@color/blanco"
     tools:context=".configuracion.ConfiguracionActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -29,74 +29,73 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5">
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
 
                 <LinearLayout
                     android:id="@+id/seguridadOption"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
                     android:background="@drawable/menu_item_background"
                     android:elevation="3dp"
                     android:gravity="center"
+                    android:layout_margin="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/ic_lock_big"
-                        android:tint="@color/blanco"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        style="@style/SubtituloBlanco"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
                         android:text="Seguridad"
-                        android:textSize="14dp"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@color/blanco"
-                        android:textStyle="bold"/>
+                        android:layout_marginLeft="16dp"/>
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:layout_margin="16dp"
+                        android:src="@drawable/ic_lock_menu"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5">
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
 
                 <LinearLayout
                     android:id="@+id/informacionOption"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
                     android:elevation="3dp"
                     android:gravity="center"
+                    android:layout_margin="16dp"
                     android:background="@drawable/menu_item_background"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/informacion"
-                        android:tint="@color/blanco"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        style="@style/SubtituloBlanco"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Información"
-                        android:textSize="14dp"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@color/blanco"
-                        android:textStyle="bold"/>
+                        android:layout_weight="0.9"
+                        android:layout_marginLeft="16dp"
+                        android:text="Información"/>
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:layout_margin="16dp"
+                        android:src="@drawable/ic_info_menu"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -104,28 +103,20 @@
 
     <LinearLayout
         android:id="@+id/cerrarSesionOption"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@drawable/menu_boton_background"
+        android:gravity="center|right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/logout"
-            android:tint="@color/blanco"/>
         <TextView
+            style="@style/ScapeBoton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cerrar sesión"
-            android:layout_marginLeft="3dp"
-            android:textStyle="bold"
-            android:textColor="@color/blanco"
-            android:textSize="12dp"/>
+            android:layout_marginLeft="3dp"/>
     </LinearLayout>
 
 

@@ -1,5 +1,6 @@
 package com.codebounds.tofyapp.api
 
+import com.codebounds.tofyapp.api.data.ClaveDeleteResponse
 import com.codebounds.tofyapp.api.data.ClaveListaResponse
 import com.codebounds.tofyapp.api.data.ClaveResponse
 import retrofit2.http.Field
@@ -32,8 +33,9 @@ interface ClaveEndPoints{
     @Headers("authtoken: AAAAA")
     @POST("/clave/eliminarClave")
     suspend fun eliminarClave(
-        @Field("token") token: String
-    ): ClaveResponse
+        @Field("token") token: String,
+        @Field("tokenUsuario") tokenUsuario: String
+    ): ClaveDeleteResponse
 
 
 

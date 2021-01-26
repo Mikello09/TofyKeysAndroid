@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".registro.SeguridadActivity"
-        android:background="@drawable/gradiente">
+        android:background="@color/blanco">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -33,7 +33,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/blanco"
+            android:background="?attr/blanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -51,20 +51,20 @@
                     android:src="@drawable/tofy_keys_icon" />
 
                 <TextView
+                    style="@style/Aviso"
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="Activa seguridad para que solamente tú puedas acceder a Tofy. Recuerda que puedes modificar tu nivel de seguridad más tarde."
-                    android:textAlignment="viewStart"
-                    android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textAlignment="viewStart" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
 
         <TextView
+            style="@style/TextoBoton"
             android:id="@+id/masTardeBoton"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -72,24 +72,18 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:text="Más tarde"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
             android:gravity="center"
-            android:textSize="21dp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/activarAhoraBoton" />
 
         <Button
+            style="@style/BotonEnabled"
             android:id="@+id/activarAhoraBoton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/boton_principal"
             android:text="Activar ahora"
-            android:textColor="#FFFFFF"
-            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="@+id/masTardeBoton"
             app:layout_constraintStart_toStartOf="@+id/masTardeBoton"
             app:layout_constraintTop_toBottomOf="@+id/seguridad_info_card" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente"
+    android:background="@color/blanco"
     tools:context=".configuracion.SeguridadConfiguracionActivity">
 
 
@@ -29,7 +29,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:background="@color/blanco"
+        android:background="?attr/blanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -62,43 +62,124 @@
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seguridad_configuracion_info_card">
 
 
-        <RadioButton
-            android:id="@+id/ningunoRadioButton"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:button="@drawable/custom_radio_button"
-            android:buttonTint="@color/colorPrimary"
-            android:text="Ninguna"
-            android:textSize="24sp" />
-        <RadioButton
-            android:id="@+id/pinRadioButton"
+            android:layout_height="70dp"
+            android:background="@drawable/round_corner"
+            android:elevation="3dp"
+            android:layout_marginLeft="24sp"
+            android:layout_marginRight="24sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="8sp"
+            android:gravity="center|left">
+
+            <RadioButton
+                android:id="@+id/ningunoRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:button="@drawable/custom_radio_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ninguna"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ningunoRadioButton"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="PIN"
-            android:buttonTint="@color/colorPrimary"
-            android:button="@drawable/custom_radio_button"
-            android:textSize="24sp" />
-        <RadioButton
-            android:id="@+id/biometriaRadioButton"
+            android:layout_height="70dp"
+            android:layout_marginLeft="24sp"
+            android:layout_marginRight="24sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:elevation="3dp"
+            android:background="@drawable/round_corner"
+            android:gravity="center|left">
+            <RadioButton
+                android:id="@+id/pinRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/custom_radio_button"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                style="@style/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8sp"
+                android:text="PIN"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/pinRadioButton"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:layout_width="32sp"
+                android:layout_height="32sp"
+                android:src="@drawable/ic_pin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:button="@drawable/custom_radio_button"
-            android:text="Biometría"
-            android:buttonTint="@color/colorPrimary"
-            android:textSize="24sp" />
+            android:layout_height="70dp"
+            android:layout_marginLeft="24sp"
+            android:layout_marginRight="24sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:elevation="3dp"
+            android:background="@drawable/round_corner"
+            android:gravity="center|left">
+            <RadioButton
+                android:id="@+id/biometriaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/custom_radio_button"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/biometria_seguridad_label"
+                style="@style/Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8sp"
+                android:text="Biometría"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/biometriaRadioButton"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/biometria_seguridad_imagen"
+                android:layout_width="32sp"
+                android:layout_height="32sp"
+                android:src="@drawable/ic_finger"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         
     </RadioGroup>
 
     <Button
+        style="@style/BotonEnabled"
         android:id="@+id/boton_guardar_seguridad"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -107,10 +188,6 @@
         android:layout_marginEnd="24dp"
         android:text="Guardar"
         android:visibility="gone"
-        android:background="@drawable/boton_principal"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />

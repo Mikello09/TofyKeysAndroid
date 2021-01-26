@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="blanco" format="color" />
+    <attr name="negro" format="color" />
+    <attr name="azul" format="color" />
+    <attr name="loader" format="color" />
+    <attr name="rojo" format="color" />
+    <attr name="separador" format="color" />
+    <attr name="verde" format="color" />
+</resources>

@@ -36,9 +36,7 @@ class AddClavePopup: DialogFragment(), ValorFragmentInterface, UsuarioPassFragme
 
     private lateinit var titulo: EditText
     private lateinit var valorBoton: ConstraintLayout
-    private lateinit var valorSeleccionado: LinearLayout
     private lateinit var userPassBoton: ConstraintLayout
-    private lateinit var usuarioPassSeleccionado: LinearLayout
     private lateinit var errorText: TextView
 
     private var tipoClave: TipoClave = TipoClave.valor
@@ -57,9 +55,7 @@ class AddClavePopup: DialogFragment(), ValorFragmentInterface, UsuarioPassFragme
 
         titulo = view.findViewById(R.id.add_clave_popup_titulo)
         valorBoton = view.findViewById(R.id.anadirClavesValorBoton)
-        valorSeleccionado = view.findViewById(R.id.valor_seleccionado)
         userPassBoton = view.findViewById(R.id.anadirClavesUserPassBoton)
-        usuarioPassSeleccionado = view.findViewById(R.id.usuariopassseleccionado)
         errorText = view.findViewById(R.id.add_clave_error)
 
         var valorFragment = ValorFragment.newInstance(this)
@@ -71,8 +67,6 @@ class AddClavePopup: DialogFragment(), ValorFragmentInterface, UsuarioPassFragme
             tipoClave = TipoClave.valor
             valorBoton.setBackgroundResource(R.drawable.opcion_tipo_seleccionado)
             userPassBoton.setBackgroundResource(0)
-            valorSeleccionado.visibility = View.INVISIBLE
-            usuarioPassSeleccionado.visibility = View.VISIBLE
         }
 
         userPassBoton.setOnClickListener {
@@ -80,8 +74,6 @@ class AddClavePopup: DialogFragment(), ValorFragmentInterface, UsuarioPassFragme
             tipoClave = TipoClave.usuarioPass
             valorBoton.setBackgroundResource(0)
             userPassBoton.setBackgroundResource(R.drawable.opcion_tipo_seleccionado)
-            valorSeleccionado.visibility = View.VISIBLE
-            usuarioPassSeleccionado.visibility = View.INVISIBLE
         }
 
         return view

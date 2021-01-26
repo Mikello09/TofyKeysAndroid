@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="AppTheme.Dark" />
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents">
+        <!--COLORS-->
+        <item name="colorPrimary">@color/colorPrincipal</item>
+        <item name="colorPrimaryDark">@color/colorPrincipal</item>
+        <item name="colorAccent">@color/negro</item>
+
+        <item name="blanco">@color/blancoRoto</item>
+        <item name="negro">@color/blanco</item>
+        <item name="azul">@color/azul</item>
+        <item name="loader">@color/loader</item>
+        <item name="rojo">@color/rojoApagado</item>
+        <item name="separador">@color/separador</item>
+        <item name="verde">@color/verdeApagado</item>
+
+        <!--TOOLBAR CONFIG-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">#FFFFFF</item>
+    </style>
+</resources>

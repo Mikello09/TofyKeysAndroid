@@ -8,8 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fragment_seleccionado">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_clave_usuario_layout"
@@ -28,6 +27,7 @@
             app:startIconDrawable="@drawable/ic_person_black">
 
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/Normal"
                 android:id="@+id/email_clave_editText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -40,7 +40,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textEmailAddress"
@@ -51,22 +51,21 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/pass_calve_edittext"
+                style="@style/Normal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="text"/>
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            style="@style/BotonEnabled"
             android:id="@+id/guardar_usuario_pass_boton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="Guardar"
-            android:background="@drawable/boton_principal"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/add_clave_pass_layout"
             app:layout_constraintStart_toStartOf="@+id/add_clave_pass_layout"

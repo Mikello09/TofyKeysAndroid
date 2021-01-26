@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".registro.RegistroActivity"
-        android:background="@drawable/gradiente">
+        android:background="@color/blanco">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -47,11 +47,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registro_info_card">
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/Normal"
                 android:id="@+id/editTextTextEmailAddress4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="text"/>
+                android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -69,11 +70,12 @@
             app:layout_constraintStart_toStartOf="@+id/registro_email_layout"
             app:layout_constraintTop_toBottomOf="@+id/registro_email_layout">
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/Normal"
                 android:id="@+id/editTextTextPassword2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="text"/>
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -91,11 +93,12 @@
             app:layout_constraintStart_toStartOf="@+id/registro_pass1_layout"
             app:layout_constraintTop_toBottomOf="@+id/registro_pass1_layout">
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/Normal"
                 android:id="@+id/editTextTextPassword3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="text"/>
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -103,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_marginTop="8dp"
-            android:background="@color/blanco"
+            android:background="?attr/blanco"
             app:layout_constraintEnd_toEndOf="@+id/registro_pass2_layout"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/registro_pass2_layout"
@@ -122,14 +125,13 @@
                     android:src="@drawable/tofy_keys_icon" />
 
                 <TextView
+                    style="@style/Aviso"
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="Necesitamos crear una cuenta de usuario para que en caso de cambiar de dispositivo puedas llevarte a Tofy contigo."
-                    android:textAlignment="viewStart"
-                    android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textAlignment="viewStart" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -137,6 +139,7 @@
 
 
         <Button
+            style="@style/BotonEnabled"
             android:id="@+id/crearCuentaBoton"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -144,9 +147,6 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:text="Crear cuenta"
-            android:textSize="18dp"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/boton_principal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -163,15 +163,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            style="@style/Error"
             android:id="@+id/registroErrorText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
             android:layout_marginTop="5dp"
             android:text="@{viewmodel.mensajeError}"
-            android:textColor="@color/rojo"
-            android:textSize="16dp"
-            android:textStyle="bold"
             android:visibility="@{viewmodel.errorVisible ? View.VISIBLE : View.GONE}"
             app:layout_constraintEnd_toEndOf="@+id/registro_pass2_layout"
             app:layout_constraintStart_toStartOf="@+id/registro_pass2_layout"

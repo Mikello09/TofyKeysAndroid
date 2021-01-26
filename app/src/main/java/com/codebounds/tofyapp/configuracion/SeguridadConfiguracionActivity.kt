@@ -11,9 +11,12 @@ import com.codebounds.tofyapp.databinding.ActivitySeguridadConfiguracionBinding
 import com.codebounds.tofyapp.helper.BaseActivity
 import com.codebounds.tofyapp.helper.Biometria
 import com.codebounds.tofyapp.helper.BiometriaAccesibleInterface
+import com.codebounds.tofyapp.helper.popups.SeguridadCambiadaPopup
+import com.codebounds.tofyapp.helper.popups.SeguridadCambiadaPopupInterface
 import com.codebounds.tofyapp.registro.PinActivity
 
-class SeguridadConfiguracionActivity : BaseActivity(), BiometriaAccesibleInterface {
+
+class SeguridadConfiguracionActivity : BaseActivity(), BiometriaAccesibleInterface, SeguridadCambiadaPopupInterface {
 
     private lateinit var binding: ActivitySeguridadConfiguracionBinding
 
@@ -32,50 +35,56 @@ class SeguridadConfiguracionActivity : BaseActivity(), BiometriaAccesibleInterfa
             TipoSeguridad.biometria -> {binding.radioGroup.check(R.id.biometriaRadioButton)}
         }
 
-        binding.radioGroup.setOnCheckedChangeListener { group, i ->
-            when(i){
-                R.id.ningunoRadioButton -> {
-                    if(Usuario.shared.seguridad != TipoSeguridad.ninguna){
-                        binding.botonGuardarSeguridad.text = "Guardar"
-                        binding.botonGuardarSeguridad.visibility = View.VISIBLE
-                    } else {
-                        binding.botonGuardarSeguridad.visibility = View.GONE
-                    }
+        binding.ningunoRadioButton.setOnCheckedChangeListener{buttonView, isChecked ->
+            if (isChecked){
+                binding.pinRadioButton.isChecked = false
+                binding.biometriaRadioButton.isChecked = false
+                if(Usuario.shared.seguridad != TipoSeguridad.ninguna){
+                    binding.botonGuardarSeguridad.text = "Guardar"
+                    binding.botonGuardarSeguridad.visibility = View.VISIBLE
+                } else {
+                    binding.botonGuardarSeguridad.visibility = View.GONE
                 }
-                R.id.pinRadioButton -> {
-                    if(Usuario.shared.seguridad != TipoSeguridad.pin){
-                        binding.botonGuardarSeguridad.text = "Configurar PIN"
-                        binding.botonGuardarSeguridad.visibility = View.VISIBLE
-                    } else {
-                        binding.botonGuardarSeguridad.visibility = View.GONE
-                    }
+            }
+        }
+
+        binding.pinRadioButton.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.ningunoRadioButton.isChecked = false
+                binding.biometriaRadioButton.isChecked = false
+                if(Usuario.shared.seguridad != TipoSeguridad.pin){
+                    binding.botonGuardarSeguridad.text = "Configurar PIN"
+                    binding.botonGuardarSeguridad.visibility = View.VISIBLE
+                } else {
+                    binding.botonGuardarSeguridad.visibility = View.GONE
                 }
-                else -> {
-                    if(Usuario.shared.seguridad != TipoSeguridad.biometria){
-                        binding.botonGuardarSeguridad.text = "Activar biometría"
-                        binding.botonGuardarSeguridad.visibility = View.VISIBLE
-                    } else {
-                        binding.botonGuardarSeguridad.visibility = View.GONE
-                    }
+            }
+        }
+
+        binding.biometriaRadioButton.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked){
+                binding.ningunoRadioButton.isChecked = false
+                binding.pinRadioButton.isChecked = false
+                if(Usuario.shared.seguridad != TipoSeguridad.biometria){
+                    binding.botonGuardarSeguridad.text = "Activar biometría"
+                    binding.botonGuardarSeguridad.visibility = View.VISIBLE
+                } else {
+                    binding.botonGuardarSeguridad.visibility = View.GONE
                 }
             }
         }
 
         binding.botonGuardarSeguridad.setOnClickListener {
-            when(binding.radioGroup.checkedRadioButtonId){
-                R.id.ningunoRadioButton -> {
-                    UsuarioManager().guardarSeguridad(TipoSeguridad.ninguna, this)
-                    finish()
-                }
-                R.id.pinRadioButton -> {
-                    val i: Intent = Intent(this, PinActivity::class.java)
-                    i.putExtra("fromRegister", false)
-                    startActivity(i)
-                }
-                else -> {
-                    UsuarioManager().guardarSeguridad(TipoSeguridad.biometria, this)
-                    finish()
-                }
+            if(binding.ningunoRadioButton.isChecked){
+                UsuarioManager().guardarSeguridad(TipoSeguridad.ninguna, this)
+                SeguridadCambiadaPopup.newInstance(this,TipoSeguridad.ninguna).show(supportFragmentManager, "TipoSeguridadCambiado")
+            } else if(binding.pinRadioButton.isChecked){
+                val i: Intent = Intent(this, PinActivity::class.java)
+                i.putExtra("fromRegister", false)
+                startActivity(i)
+            } else {
+                UsuarioManager().guardarSeguridad(TipoSeguridad.biometria, this)
+                SeguridadCambiadaPopup.newInstance(this,TipoSeguridad.biometria).show(supportFragmentManager, "TipoSeguridadCambiado")
             }
         }
     }
@@ -87,4 +96,9 @@ class SeguridadConfiguracionActivity : BaseActivity(), BiometriaAccesibleInterfa
     override fun biometriaNoAccesible() {
         binding.biometriaRadioButton.visibility = View.GONE
     }
+
+    override fun ok() {
+        finish()
+    }
 }
+

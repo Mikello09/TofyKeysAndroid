@@ -76,13 +76,12 @@ class ClavesManager {
     }
 
     suspend fun borrarClave(clave: Clave){
-        room.claveDao().delete(clave)
         val result = kotlin.runCatching {
             val request = ServiceBuilder.buildService(ClaveEndPoints::class.java)
-            request.eliminarClave(clave.token)
+            request.eliminarClave(clave.token,Usuario.shared.token)
         }
         result.onSuccess {
-            print("success")
+            room.claveDao().delete(clave)
         }
         result.onFailure {
             print("error")

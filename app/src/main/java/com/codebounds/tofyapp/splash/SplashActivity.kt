@@ -19,7 +19,7 @@ class SplashActivity : BaseActivity() {
         setContentView(binding.root)
         setActionBar()
 
-        Glide.with(this).load(R.drawable.tofy_keys_splash_animation).into(binding.splashImage)
+        Glide.with(this).load(R.drawable.tofy_keys_animacion).into(binding.splashImage)
 
         this.runOnUiThread(Runnable {
             Timer().schedule(2000){

@@ -13,21 +13,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradiente"
+        android:background="@color/blanco"
         tools:context=".login.LoginActivity">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:fontFamily="@font/croissant_one"
-            android:text="Tofy"
-            android:textColor="@color/colorPrimary"
-            android:textSize="42dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
 
 
@@ -36,23 +25,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
             app:startIconDrawable="@drawable/ic_person_black"
             android:hint="Email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toTopOf="parent">
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/Normal"
                 android:id="@+id/editTextTextEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="text"/>
+                android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -67,56 +56,51 @@
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/ic_lock"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_text_layout">
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/Normal"
                 android:id="@+id/editTextTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="text"/>
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            style="@style/Error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/errorMessage"
             android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/rojo"
             android:visibility="@{viewmodel.errorVisibility ? View.VISIBLE : View.GONE}"
-            android:textSize="16dp"
             android:text="Usuario o contraseña incorrectos"
             app:layout_constraintTop_toBottomOf="@+id/pass_text_layout"
             app:layout_constraintStart_toStartOf="@+id/pass_text_layout"/>
 
         <Button
+            style="@style/BotonEnabled"
             android:id="@+id/entrar_boton"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
             android:text="Entrar"
-            android:textColor="#FFFFFF"
-            android:textSize="18dp"
-            android:background="@drawable/boton_principal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/errorMessage" />
 
         <TextView
+            style="@style/TextoBoton"
             android:id="@+id/registrateBoton"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="24dp"
             android:text="¿No tienes cuenta? !Regístrate!"
-            android:textColor="@color/colorPrimary"
-            android:textAllCaps="false"
-            android:textSize="21dp"
-            android:textStyle="bold"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +131,27 @@
             app:lottie_loop="false"
             app:lottie_rawRes="@raw/unlock" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/entrar_boton"
+            app:srcCompat="@drawable/tofy_keys_icon" />
+
+        <TextView
+            style="@style/Titulo"
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Tofy Keys"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

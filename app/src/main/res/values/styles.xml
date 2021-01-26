@@ -1,15 +1,115 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AppTheme" parent="AppTheme.Light" />
+
+
+    <style name="AppTheme.Light" parent="Theme.MaterialComponents.Light">
+        <!--COLORS-->
+        <item name="colorPrimary">@color/colorPrincipal</item>
+        <item name="colorPrimaryDark">@color/colorPrincipal</item>
+        <item name="colorAccent">@color/negro</item>
+
+        <item name="blanco">@color/blanco</item>
+        <item name="negro">@color/negro</item>
+        <item name="azul">@color/azul</item>
+        <item name="loader">@color/loader</item>
+        <item name="rojo">@color/rojo</item>
+        <item name="separador">@color/separador</item>
+        <item name="verde">@color/verde</item>
 
         <!--TOOLBAR CONFIG-->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorControlNormal">#FFFFFF</item>
+    </style>
+
+
+
+    <style name="Titulo" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/titulo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Subtitulo" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/subtitulo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SubtituloBlanco" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/blanco</item>
+        <item name="android:textSize">@dimen/subtitulo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ScapeBoton" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/rojo</item>
+        <item name="android:textSize">@dimen/subtitulo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Error" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/rojo</item>
+        <item name="android:textSize">@dimen/error</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Normal" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/negro</item>
+        <item name="android:textSize">@dimen/normal</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Aviso" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/negro</item>
+        <item name="android:textSize">@dimen/aviso</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="PinDigit" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/pinDigito</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextoBoton" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/botonTexto</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="OpcionTitulo" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/opcionTitulo</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DetalleBlanco" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/blanco</item>
+        <item name="android:textSize">@dimen/normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DetallePrimario" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BotonEnabled" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/blanco</item>
+        <item name="android:textSize">@dimen/normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/boton_principal</item>
+    </style>
+
+    <style name="BotonVerde" parent="@android:style/Widget.Button">
+        <item name="android:textColor">?attr/blanco</item>
+        <item name="android:textSize">@dimen/normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">?attr/verde</item>
     </style>
 
 

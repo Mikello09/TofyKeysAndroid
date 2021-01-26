@@ -77,7 +77,7 @@ open class BaseActivity: AppCompatActivity(){
                 setSupportActionBar(t)
                 supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 supportActionBar?.title = ""
-                addLoginToolBar(toolbar = t, title = "Configuración")
+                addLoginToolBar(toolbar = t, title = "Menú")
             }
             InformacionActivity::class -> {
                 val t = findViewById(R.id.toolbar) as Toolbar

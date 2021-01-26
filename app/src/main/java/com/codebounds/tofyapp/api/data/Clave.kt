@@ -62,3 +62,7 @@ data class ClaveModel(
     var valor: String,
     var fecha: String
 )
+
+data class ClaveDeleteResponse(
+    var result: String
+)
